@@ -37,6 +37,9 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    <div th:unless="${jobs} and ${jobs.size()}">
+        <h2>Sorry, but no results match that criteria. Please try another search.</h2>
+    </div>
     <div class="container" th:fragment="job-loop" th:each="job : ${jobs}">
         <table class="job-listing">
             <tr th:each="entry : ${job}">

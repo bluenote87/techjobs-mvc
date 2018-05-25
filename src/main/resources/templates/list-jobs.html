@@ -11,6 +11,9 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #3 - Use the same list display from search.html -->
+    <div th:unless="${jobs} and ${jobs.size()}">
+        <h2>No results to show yet.</h2>
+    </div>
     <div class="container" th:replace="search :: job-loop">
     </div>
 </div>
